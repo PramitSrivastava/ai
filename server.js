@@ -13,7 +13,7 @@ const app = express();
 
 //connect to mongo db
 const dbURI =
-  "mongodb+srv://pramitsrivastava476:Pramit123@cluster10.1vn5baw.mongodb.net/UserDB?retryWrites=true&w=majority";
+  "mongodb+srv://Gohan:12345@cluster0.egzog4d.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
@@ -28,7 +28,7 @@ mongoose
     console.error("MongoDB Connection Error:", error);
     // Instead of using 'res' here, you might want to log the error or handle it appropriately.
     // For example, you could exit the application or display a message to the console.
-    process.exit(1); // Exit the process with an error code
+    // Exit the process with an error code
   });
 //middleware
 app.use(bodyParser.json());
