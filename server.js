@@ -25,7 +25,7 @@ mongoose
     });
   })
   .catch((error) => {
-    console.log("Unable to connect to server and or mongodb");
+     res.status(500).json({ error: error.message });
   });
 //middleware
 app.use(bodyParser.json());
