@@ -25,7 +25,10 @@ mongoose
     });
   })
   .catch((error) => {
-     res.status(500).json({ error: error.message });
+    console.error("MongoDB Connection Error:", error);
+    // Instead of using 'res' here, you might want to log the error or handle it appropriately.
+    // For example, you could exit the application or display a message to the console.
+    process.exit(1); // Exit the process with an error code
   });
 //middleware
 app.use(bodyParser.json());
