@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("./models/userSchema");
 
@@ -44,7 +44,7 @@ app.post("/register", async (req, res) => {
     await newUser.save(); // saving it
     res.status(201).json({ message: "User Created Successfully" });
   } catch (error) {
-    res.status(500).json({ error: error.message});
+    res.status(500).json({ error: error.message });
   }
 });
 
